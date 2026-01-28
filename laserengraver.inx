@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Laser Engraver</name>
+    <id>org.inkscape.laserengraver</id>
+
+    <param name="active-tab" type="notebook">
+
+        <!-- Laser Tab -->
+        <page name="laser" gui-text="Laser">
+            <label appearance="header">Laser Engraving Settings</label>
+
+            <param name="engraving-laser-speed"
+                   type="int" min="0" max="10000"
+                   gui-text="Laser engraving speed (units/min):">
+                30
+            </param>
+
+            <label>
+Select paths to engrave, or leave empty to process all paths.
+            </label>
+
+            <separator/>
+
+            <label appearance="header">Curve Handling</label>
+
+            <param name="curve-mode"
+                   type="optiongroup"
+                   appearance="combo"
+                   gui-text="Curve mode:">
+                <option value="polyline">Polyline (G1 only, recommended)</option>
+                <option value="biarc">Biarc (G2/G3 arcs)</option>
+            </param>
+
+            <param name="polyline-segments"
+                   type="int" min="4" max="200"
+                   gui-text="Polyline segments per curve:">
+                24
+            </param>
+
+            <label>
+Polyline mode avoids arc artifacts (UUUU shapes in LinuxCNC).
+Increase segments for smoother curves.
+            </label>
+
+            <separator/>
+
+            <label appearance="header">Output Settings</label>
+
+            <param name="filename"
+                   type="string"
+                   gui-text="File:">
+                output.nc
+            </param>
+
+            <param name="add-numeric-suffix-to-filename"
+                   type="bool"
+                   gui-text="Add numeric suffix to filename">
+                true
+            </param>
+
+            <separator/>
+
+            <label appearance="header">Preferences</label>
+
+            <param name="directory"
+                   type="string"
+                   gui-text="Directory:">
+                c:\output\
+            </param>
+
+            <param name="unit"
+                   type="optiongroup"
+                   appearance="combo"
+                   gui-text="Units:">
+                <option value="G21 (All units in mm)">mm</option>
+                <option value="G20 (All units in inches)">in</option>
+            </param>
+
+            <param name="suppress-all-messages"
+                   type="bool"
+                   gui-text="Suppress all messages">
+                true
+            </param>
+
+            <param name="engraving-draw-calculation-paths"
+                   type="bool"
+                   gui-text="Draw additional graphics to debug engraving path">
+                false
+            </param>
+
+            <param name="create-log"
+                   type="bool"
+                   gui-text="Generate log file">
+                false
+            </param>
+
+            <param name="log-filename"
+                   type="string"
+                   gui-text="Full path to log file:">
+            </param>
+        </page>
+
+        <!-- Orientation Tab -->
+        <page name="orientation" gui-text="Orientation">
+            <label appearance="header">Orientation Points</label>
+
+            <label>
+Orientation points define the coordinate system for G-code generation.
+
+Click 'Apply' to create orientation points on the current layer.
+            </label>
+
+            <separator/>
+
+            <param name="unit"
+                   type="optiongroup"
+                   appearance="combo"
+                   gui-text="Units:">
+                <option value="G21 (All units in mm)">mm</option>
+                <option value="G20 (All units in inches)">in</option>
+            </param>
+        </page>
+
+        <!-- Advanced Tab -->
+        <page name="advanced" gui-text="Advanced">
+            <label appearance="header">Advanced Settings</label>
+
+            <param name="biarc-max-split-depth"
+                   type="int" min="1" max="10"
+                   gui-text="Biarc approximation depth:">
+                4
+            </param>
+
+            <label>
+Used only in Biarc mode.
+Higher values produce smoother arcs but larger G-code files.
+            </label>
+        </page>
+
+    </param>
+
+    <effect>
+        <object-type>path</object-type>
+        <effects-menu>
+            <submenu name="Laserengraver"/>
+        </effects-menu>
+    </effect>
+
+    <script>
+        <command location="inx" interpreter="python">laserengraver.py</command>
+    </script>
+
+</inkscape-extension>
