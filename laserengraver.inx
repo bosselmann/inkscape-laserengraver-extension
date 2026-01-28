@@ -1,3 +1,9 @@
+<!--
+Laserengraver Inkscape Extension
+Copyright (C) 2026 Max Bosselmann
+Licensed under GPL-2.0-or-later
+-->
+
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
     <name>Laser Engraver</name>
