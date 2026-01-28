@@ -95,3 +95,21 @@ MIT License – see the `LICENSE` file for details.
 This project grew out of practical needs in a small woodworking and manufacturing workshop that values **open-source software**, transparency, and long-term maintainability.
 
 If it helps others: even better.
+
+---
+
+## Credits & Acknowledgements
+
+This project builds upon ideas and code originally developed in the
+Inkscape Gcodetools / Laserengraver ecosystem.
+
+Original contributors include:
+
+- **Nick Drobchenko** (2009) – Laserengraver / Gcodetools foundation
+- **hugomatic** (2007) – gcode.py concepts
+- **Aaron Spike** (2005–2007) – cubicsuperpath and Bezier utilities
+
+The current version was heavily rewritten, modularized and adapted
+for modern Inkscape versions (1.4+), LinuxCNC, and predictable CNC
+workflows.
+
