@@ -6,6 +6,10 @@ It is based on the original *Laserengraver / Gcodetools* concept, but modernized
 
 ---
 
+<img width="589" height="789" alt="Image" src="https://github.com/user-attachments/assets/8eebd935-91ab-4f52-951c-826c2d719156" />
+
+---
+
 ## Features
 
 - Export SVG paths directly to **G-code (mm or inch)**
