@@ -5,6 +5,7 @@ This project is a custom **Inkscape extension** for generating **G-code** from S
 It is based on the original *Laserengraver / Gcodetools* concept, but modernized and extended to work reliably with **Inkscape 1.4+**, LinuxCNC, and similar controllers.
 
 ---
+<img width="1920" height="1130" alt="Image" src="https://github.com/user-attachments/assets/22b49d5e-3749-4b1b-ba90-f946096c5ad1" />
 
 <img width="589" height="789" alt="Image" src="https://github.com/user-attachments/assets/8eebd935-91ab-4f52-951c-826c2d719156" />
 
